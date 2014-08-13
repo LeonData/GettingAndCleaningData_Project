@@ -30,7 +30,7 @@ Folder 'UCI HAR Dataset'
 	- STANDING
 	- LAYING
 
- * features.txt - contains 561 rows with names of measurements
+ * features.txt - contains 561 rows with names of measurements; each measure is a float number
  
  * features_info.txt - contains descriptions of the measurements
 
@@ -67,17 +67,17 @@ assignment:
 ## How to produce a tidy data set? ##
 
 To produce a tidy data set you need:
-     *	Unzip the archive data file that can be found here:
-        https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+1. 	Unzip the archive data file that can be found here:
+	https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 	If successful, your unzip program will create a new directory
 	'UCI HAR Dataset' under your current path,
-     *	Copy run_analysis.R code file into 'UCI HAR Dataset' folder
-     *	Set the working directory for R or RStudio to be 
+2.	Copy run_analysis.R code file into 'UCI HAR Dataset' folder
+3.	Set the working directory for R or RStudio to be 
 	the one that points to 'UCI HAR Dataset', so the files
 	in that directory can be accessed by R directly by name.
-     *	If you don't have read.table package installed, please
+4.	If you don't have read.table package installed, please
 	install it by calling 'install.packages("read.table")
-     *	Run the code in 'run_analysis.R'
+5.	Run the code in 'run_analysis.R'
 
 ## How is data organized in tidy.txt file? ##
 
