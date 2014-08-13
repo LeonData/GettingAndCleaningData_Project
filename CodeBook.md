@@ -23,12 +23,12 @@ Files description is as follows:
 Folder 'UCI HAR Dataset'
 
  * activity_labels.txt - contains 2 columns with 6 rows that describe activities as
-  	1 WALKING
-	2 WALKING_UPSTAIRS
-	3 WALKING_DOWNSTAIRS
-	4 SITTING
-	5 STANDING
-	6 LAYING
+  	- WALKING
+	- WALKING_UPSTAIRS
+	- WALKING_DOWNSTAIRS
+	- SITTING
+	- STANDING
+	- LAYING
 
  * features.txt - contains 561 rows with names of measurements
  
@@ -67,17 +67,17 @@ assignment:
 ## How to produce a tidy data set? ##
 
 To produce a tidy data set you need:
-1.	Unzip the archive data file that can be found here:
+     1.	Unzip the archive data file that can be found here:
         https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 	If successful, your unzip program will create a new directory
 	'UCI HAR Dataset' under your current path,
-2.	Copy run_analysis.R code file into 'UCI HAR Dataset' folder
-3.	Set the working directory for R or RStudio to be 
+     2.	Copy run_analysis.R code file into 'UCI HAR Dataset' folder
+     3.	Set the working directory for R or RStudio to be 
 	the one that points to 'UCI HAR Dataset', so the files
 	in that directory can be accessed by R directly by name.
-4.	If you don't have read.table package installed, please
+     4.	If you don't have read.table package installed, please
 	install it by calling 'install.packages("read.table")
-5.	Run the code in 'run_analysis.R'
+     5.	Run the code in 'run_analysis.R'
 
 ## How is data organized in the output from the sxript? ##
 
@@ -86,7 +86,7 @@ one TXT file 'tidy.txt' in the local folder which will contain
 a tidy data set in the following format:
 
 * Subject ID (numeric, values from 1 to 30 inclusive)
-* Activity label (character, one of the following:
+* Activity label (character), one of the following:
   	1. WALKING
 	2. WALKING_UPSTAIRS
 	3. WALKING_DOWNSTAIRS
@@ -101,4 +101,4 @@ a tidy data set in the following format:
   as in features.txt
 
 There will be 6 rows with the same subject ID, for each 
-activity, starting with  FIXME, 180 rows in total.
+activity, 180 rows in total.
