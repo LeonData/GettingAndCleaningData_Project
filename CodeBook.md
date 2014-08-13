@@ -67,38 +67,29 @@ assignment:
 ## How to produce a tidy data set? ##
 
 To produce a tidy data set you need:
-     1.	Unzip the archive data file that can be found here:
+     *	Unzip the archive data file that can be found here:
         https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 	If successful, your unzip program will create a new directory
 	'UCI HAR Dataset' under your current path,
-     2.	Copy run_analysis.R code file into 'UCI HAR Dataset' folder
-     3.	Set the working directory for R or RStudio to be 
+     *	Copy run_analysis.R code file into 'UCI HAR Dataset' folder
+     *	Set the working directory for R or RStudio to be 
 	the one that points to 'UCI HAR Dataset', so the files
 	in that directory can be accessed by R directly by name.
-     4.	If you don't have read.table package installed, please
+     *	If you don't have read.table package installed, please
 	install it by calling 'install.packages("read.table")
-     5.	Run the code in 'run_analysis.R'
+     *	Run the code in 'run_analysis.R'
 
-## How is data organized in the output from the sxript? ##
+## How is data organized in tidy.txt file? ##
 
 If you have run run_analysis.R correctly, the script shall produce
 one TXT file 'tidy.txt' in the local folder which will contain
 a tidy data set in the following format:
 
 * Subject ID (numeric, values from 1 to 30 inclusive)
-* Activity label (character), one of the following:
-  	1. WALKING
-	2. WALKING_UPSTAIRS
-	3. WALKING_DOWNSTAIRS
-	4. SITTING
-	5. STANDING
-	6. LAYING
-* The next columns will contain means and standard deviations
-  of the parameters described above in its original form
-  ( like tBodyAcc-mean()-X ). See full list of activities in 
-  features.txt file which you can find in this repository
-  The order of the columns starting from column 3 is the same
-  as in features.txt
+* Activity label (character string, see above explanations for activity_labels.txt)
+* The next columns will contain means and standard deviations of the parameters 
+  described above in its original form ( like tBodyAcc-mean()-X ). 
+  See full list of activities in features.txt file.
+  The order of the columns starting from column 3 is the same as in features.txt
 
-There will be 6 rows with the same subject ID, for each 
-activity, 180 rows in total.
+There will be 6 rows with the same subject ID, for each activity, 180 rows in total.
