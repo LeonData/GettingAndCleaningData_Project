@@ -3,59 +3,18 @@
 This file describes a tidy data set that is created by run_analysis.R
 
 The task is to analyse initial data files which have been collected in accordance with
-the project that is described here:
+the project that focused on daily activities by a group of subject and it is described here:
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-### Short descriptoon of the data collection project
+During each activity measurements were taken for each subject by an accelerometer that is built in a Samsung phone. The phone was positioned on the waist. Only measurements of mean and standard deviations for different accelerometer measurements (which are all described in features_info.txt file in the archive ) were selected for analysis by this code.
+The analysis is to find means of all selected measures and produce a tidy data set called "tidy.txt".
 
-	There have been several data files collected by recording of accelerometer information 
-	by a sensor built into a smart phone while 30 persons (subjects) performed activities of 
-	daily living (ADL).
-	Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, 
-	SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist.
-
-	As a result - a Human Activity Recognition database was built which was split into 
-	a training set and a test set of files (they are located in /test and /train subfolders).
-
-Files description is as follows:
-
-Folder 'UCI HAR Dataset'
-
- * activity_labels.txt - contains 2 columns with 6 rows that describe activities as
-  	- WALKING
-	- WALKING_UPSTAIRS
-	- WALKING_DOWNSTAIRS
-	- SITTING
-	- STANDING
-	- LAYING
-
- * features.txt - contains 561 rows with names of measurements; each measure is a float number
- 
- * features_info.txt - contains descriptions of the measurements
-
-Folder 'UCI HAR Dataset/train'
-
- * subject_train.txt - contains subject ID (one per row, values from 1 to 30 inclusive)
-                       of subjects that were included in the train set
- 
- * X_train.txt       - contains rows of measurements       
-
- * y_train.txt       - contains activity codes (one per row, values from 1 to 6 inclusive)
- 
-Folder 'UCI HAR Dataset/test'
-
- * subject_test.txt  - contains subject ID (one per row, values from 1 to 30 inclusive)
-                       of subjects that were included in the test set
- 
- * X_test.txt       - contains rows of measurements       
-
- * y_test.txt       - contains activity codes (one per row, values from 1 to 6 inclusive)
+More details are provided in the Readme.md file that can be found in the same GitHub repository.
 
 ## What does run_analysis.R do? ##
 
-The code file does the following tasks as required by the project
-assignment:
+The code does the following tasks as required by the project assignment:
 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -63,12 +22,12 @@ assignment:
 4. Appropriately labels the data set with descriptive variable names. 
 5. Creates a second, independent tidy data set (tidy.txt) with the average of each variable 
    for each activity and each subject.
- 
+
 ## How to produce a tidy data set? ##
 
 To produce a tidy data set you need:
 
-1. 	Unzip the archive data file that can be found here:
+1.  Unzip the archive data file that can be found here:
 
 	https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 	
@@ -81,22 +40,39 @@ To produce a tidy data set you need:
 	the one that points to 'UCI HAR Dataset', so the files
 	in that directory can be accessed by R directly by name.
 
-4.	If you don't have read.table package installed, please
-	install it by calling 'install.packages("read.table").
+4.	Run the code in 'run_analysis.R'.
 
-5.	Run the code in 'run_analysis.R'.
+If you have run run_analysis.R correctly, the script shall produce one TXT file called 'tidy.txt' in the local folder. The file is created by write.table call with one space separator with row names removed.
 
 ## How is data organized in tidy.txt file? ##
 
-If you have run run_analysis.R correctly, the script shall produce
-one TXT file 'tidy.txt' in the local folder which will contain
-a tidy data set in the following format:
+The file contains data for 30 subjects (participants) identified by numbers 1 through 30 that performed 6 types of the following activities:
+    - WALKING
+    - WALKING_UPSTAIRS
+    - WALKING_DOWNSTAIRS
+    - SITTING
+    - STANDING
+    - LAYING
 
-* Subject ID (numeric, values from 1 to 30 inclusive)
-* Activity label (character string, see above explanations for activity_labels.txt)
-* The next columns will contain means and standard deviations of the parameters 
-  described above in its original form ( like tBodyAcc-mean()-X ). 
-  See full list of activities in features.txt file.
-  The order of the columns starting from column 3 is the same as in features.txt
+The columns represent subject code, activity label (one of the ones above), followed by 79 columns of means of measures.
+Each measure column has a name in the following format: "mean_of_<description_of_a_measure>", for example:
+mean_of_tBodyAcc-std()-X, which means it's a mean of body accelerometer standard deviation along axis X for a particular subject while he/she was doing an activity outlined in "activity" column. 
+There are in total of 79 measures columns besides the first column "subject" and the second column "activity"
 
-There will be 6 rows with the same subject ID, for each activity, 180 rows in total.
+Columns contain the following data:
+
+* The first column is "subject" that contains SubjectID (numeric, numbers from 1 to 30 inclusive) 
+  for each participant  
+
+* The second column is activity; a character string, one of the following: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING
+
+* The next columns will contain means of means and standard deviations of the parameters 
+  described in features.txt file. The values are float numbers (both positive and negative). They represent mean values for every feature measures for each participant and each activity.
+  For example, for participant 2, that was doing activity WALKING_DOWNSTAIRS measure "mean_of_tBodyAcc-std()-X" means it's a mean of participant 2 body accelerometer standard deviation along axis X while he/she was walking downstairs.
+  
+The subject and activity columns are ordered by subject and then by activity.
+The order of the means of measures columns (starting from column 3) is the same as in features.txt
+
+There will be 6 rows with the same subject ID, for each of 6 activities, 180 rows in total.
+There will be 81 columns in total (subjectID, activity, followed by 79 columns of means of measures)
+
