@@ -3,7 +3,7 @@
 # The code reads data files from the Human Activity Recognition database
 # and produces a tidy data set which contains means of all measurements
 # of means and standard deviations of body movements as recorded by an accelerometer
-# built into a Samsung phone. For more details - please read README.md file
+# built into a Samsung phone. For more details - please read README.md or codeBook.md files
 #
 # To run the code: 
 #         1) Unzip the archive with data files that can be found here
