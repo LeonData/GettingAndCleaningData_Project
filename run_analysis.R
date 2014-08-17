@@ -99,9 +99,11 @@ for( i in 1:nrow(fullSet) )
 fullSet$activity <- as.factor(fullSet$activity)
 fullSet$subject  <- as.factor(fullSet$subject)
 
-# Get tidy data (excluding last 2 columns which are subject and activity, so their mean is not needed)
+# Get tidy data of means (supressing warnings as last 2 columns, like activities (which are strings), 
+# produces warnings when means are calculated, but those columns are discarded after anyway as unneeded)
 suppressWarnings(
-  tidy <- aggregate(fullSet, by=list(subject=fullSet$subject, activity = fullSet$activity), FUN=mean, na.rm=TRUE)[,c(1:(colsFullSet-2))]
+  tidy <- aggregate(fullSet, by=list(subject=fullSet$subject, activity = fullSet$activity), 
+                    FUN=mean, na.rm=TRUE)[,c(1:(colsFullSet-2))]
 )
 
 ##############  Writing a tidy data into local file "tidy.txt" ##############
