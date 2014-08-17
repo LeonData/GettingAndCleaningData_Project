@@ -43,7 +43,7 @@ If you have run run_analysis.R correctly, the script shall produce one TXT file 
 
 ## How is data organized in tidy.txt file? ##
 
-The file contains means of measurements of data (which in trun was means and standard deviations of some body movements measurements) for 30 subjects (participants) identified by numbers 1 through 30 that performed 6 types of the following activities:
+The file contains means of measurements of data (which in turn were means and standard deviations of some body movements measurements) for 30 subjects (participants) identified by numbers 1 through 30 that performed 6 types of the following activities:
     - WALKING
     - WALKING_UPSTAIRS
     - WALKING_DOWNSTAIRS
@@ -53,11 +53,11 @@ The file contains means of measurements of data (which in trun was means and sta
 
 The columns order is as folows:
     - subject code
-    - activity label (one of the ones above)
-    - followed by 79 columns of measurements (of means and std as described before).
+    - activity label (one of the ones right above)
+    - followed by 79 columns of measurements (of means of both means and standard deviations as described before).
     
 Each measurements column has a name in the following format: "mean_of_<description_of_a_measure>", for example:
-mean_of_tBodyAcc-std()-X, which means it's a mean of the body accelerometer standard deviation along axis X for a particular subject (their subject ID can be found in the first column) while he/she was doing an activity outlined in "activity" column. 
+mean_of_tBodyAcc-std()-X, which means it's a mean of the body accelerometer standard deviation along axis X for a particular subject (their subject ID can be found in the first column) while he/she was doing an activity outlined in "activity" column averaged over all available measures. 
 There are in total of 79 measurements columns besides the first column "subject" and the second column "activity"
 
 Columns contain the data with the following data domains:
