@@ -42,7 +42,7 @@ colNumTest = ncol(testSet)
 
 if( colNumTest != ncol(trainSet) )
 {
-  stop("Train and Test total sets have different number of columns! Please check data!") 
+  stop("Train and Test sets have different number of columns! Please check data!") 
 }
 
 # Bind rows from test and train data sets
