@@ -43,7 +43,7 @@ Folder 'UCI HAR Dataset' contains the following relevant files:
 Folder 'UCI HAR Dataset/train' contains the following relevant files:
 
  * subject_train.txt - contains subject ID (one per row, values from 1 to 30 inclusive)
-                       of subjects that were included in the train set
+                       of subjects (participants) that were included in the train set
  
  * X_train.txt       - contains rows of measurements       
 
