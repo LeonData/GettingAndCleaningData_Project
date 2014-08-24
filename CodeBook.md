@@ -7,7 +7,7 @@ the project that focused on daily activities by a group of persons (subjects) an
 
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
 
-During each activity measurements were taken for each subject by an accelerometer that is built in a Samsung phone. The phone was positioned on the waist. Only measurements of mean and standard deviations for different accelerometer measurements (which are all described in features_info.txt file in the archive ) were selected for analysis by this code.
+During each activity measurements were taken for each subject by an accelerometer that was built in a Samsung phone. The phone was positioned on the waist. Only measurements of mean and standard deviations for different accelerometer measurements (which are all described in features_info.txt file in the archive ) were selected for analysis by this code.
 The analysis is to find means of all selected measures for each activity and each subject and to produce a tidy data set called "tidy.txt".
 
 More details are provided in the Readme.md file that can be found in the same GitHub repository.
